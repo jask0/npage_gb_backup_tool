@@ -9,3 +9,5 @@ Mehr Infos dazu wie man das Tool nutzt gibt es hier: https://www.youtube.com/wat
 Und auch im Tool selber unter dfem Reiter Hilfe->Anleitung
 
 Support gibt es im www.HomepageHelfer.org Forum.
+
+Version 2.1 beta
