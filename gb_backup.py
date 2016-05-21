@@ -9,16 +9,16 @@ import bt_gui
 #############################################################
 ################ Globale Variablen ##########################
 #############################################################
-# liste aller zu durchsuchenden URLs						#
-quellen = ""												#
+# liste aller zu durchsuchenden URLs
+quellen = ""	
 source = "internet"
 bauckasten = "npage"
-# Warnung wenn keine gueltigen quellen angegeben werden		#
-errorInfo = "Es wurden keine Backup-Quellen angegeben!"		#
-# database backup connection and cursor						#
+# Warnung wenn keine gueltigen quellen angegeben werden	
+errorInfo = "Es wurden keine Backup-Quellen angegeben!"	
+# database backup connection and cursor	
 db_name = "gb_backup.db"
-conn = None													#
-cursor = None												#
+conn = None
+cursor = None
 #############################################################
 
 def create_db():
@@ -222,6 +222,7 @@ Version 2.1 beta"""
 			file_content = file_content.replace("&auml;","ä")
 			file_content = file_content.replace("&Auml;","Ä")
 			file_content = file_content.replace("&szlig;","ß")
+			file_content = file_content.replace(";",":")
 			
 			soup = bsoup(file_content, "html.parser")
 
@@ -255,6 +256,8 @@ Version 2.1 beta"""
 					dic={}
 				
 				temp_value = values_list[counter].text.strip()
+				if temp_value == '':
+					temp_value = ' '
 				if(str(elem) == "Name:"):
 					dic['Name']= temp_value
 				elif(str(elem) == "E-Mail:"):
